@@ -1,28 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-class App extends Component {
+import Form from './form.js';
+
+// import './styles.scss';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+      people: [],
+      selectedPerson: '',
+    };
+  }
+
+  handleForm = (count, people) => {
+    this.setState({ count, people });
+  };
+
+  showPerson = person => {
+    this.setState({ selectedPerson: person });
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <>
+        <Form prompt="Get some Star Wars Folks..." handler={this.handleForm} />
+        <h3>Selected Character: {this.state.selectedPerson}</h3>
+        <ul>
+          {Object.keys(this.state.people).map((person, idx) => {
+            return (
+              <li key={idx}>
+                <a href="#" onClick={() => this.showPerson(person)}>
+                  {person}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </>
     );
   }
 }
 
 export default App;
+
