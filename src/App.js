@@ -10,7 +10,6 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      location : ""
     };
   }
 
@@ -21,6 +20,11 @@ class Form extends React.Component {
       console.log(data.body);
       this.setState({location: data.body});
       console.log(this.state.location.latitude);
+
+
+      //needs to call the setter function
+      this.props.updateLocation(this.state.location)
+      // this.props.setState({lat:this.props.location.latitude, long: this.props.location.longitude })
     }
     
     handleChange = (event) => {
@@ -29,7 +33,7 @@ class Form extends React.Component {
         [name]: value,
       });
     }
-    
+  
   render() {
     return (
       <form>
@@ -41,22 +45,25 @@ class Form extends React.Component {
 
 }
 
+//parent component
+
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {};
+    super(props)
+    this.state = {
+    };
     //to update the state
     
   }
 
   updateLocation = (location)=>{
-    this.setState({location: location});
+    this.setState({long: location.longitude, lat:location.latitude});
   }
 
   render() {
     return (
       <>
-        <Form prompt="Update Location" handler={this.handleLocation} />
+        <Form prompt="Update Location" handler={this.handleLocation} updateLocation={this.updateLocation} />
         <p> location is: {this.state.location} here</p>
 
       </>
