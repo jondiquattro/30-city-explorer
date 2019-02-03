@@ -15,7 +15,6 @@
 * This is the front-end portion of the City-Explorer application. Using React, we built the components required to assemble the interface of the application. 
 
 #### Documentation
-* [swagger](http://xyz.com) (API assignments only)
 * [jsdoc](http://xyz.com) (All assignments)
 
 
@@ -28,5 +27,10 @@
   
 #### Tests
 * `npm test`
+
+### Help and Credit
+* Brent Woodward 
+* Lena Eivy
+* Jared Pattison
 
 
