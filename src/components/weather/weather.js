@@ -1,8 +1,13 @@
 import React from "react";
-import superagent from 'superagent';
 
-const Weather = () => {
-  return <p>Hello Weather!</p>;
+const Weather = props => {
+  return (
+    <ul>
+      {props.weather.map((forecast, idx) => (
+        <li key={`weather-${idx}`}>The forecast for {forecast.time} is: {forecast.forecast}</li>
+      ))}
+    </ul>
+  );
 }
 
 
