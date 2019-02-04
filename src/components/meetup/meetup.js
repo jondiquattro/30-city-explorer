@@ -1,8 +1,12 @@
 import React from "react";
 import superagent from 'superagent';
 
-const Meetup = (props) => {
-  return <p>Hello Meetup!</p>;
+const Meetup = props => {
+  return (
+    <ul>
+      <li>Hello Meetup!</li>
+    </ul>
+  );
 }
 
 
