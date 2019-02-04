@@ -9,7 +9,7 @@
 * [repo](https://github.com/jondiquattro/30-city-explorer/pull/4)
 * [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
+* [front-end](http://xyz.com) (http://cityexplorer-diquattro-george.s3-website-us-west-2.amazonaws.com/)
 
 ### Description 
 * This is the front-end portion of the City-Explorer application. Using React, we built the components required to assemble the interface of the application. 
