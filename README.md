@@ -6,7 +6,7 @@
 ### Author: Michael George and Jon DiQuattro, Code 401d28
 
 ### Links and Resources
-* [repo](http://xyz.com)
+* [repo](https://github.com/jondiquattro/30-city-explorer/pull/4)
 * [travis](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
@@ -27,6 +27,11 @@
   
 #### Tests
 * `npm test`
+
+### UML Diagram
+* [UML Diagram](#)
+* _no actual diagram yet_
+* This displays how the app components link up and connect with each other.
 
 ### Help and Credit
 * Brent Woodward 
