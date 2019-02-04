@@ -27,6 +27,7 @@
   
 #### Tests
 * `npm test`
+* So far only two passing tests. One that tests for proof of life, and the other that tests to see if App renders.
 
 ### UML Diagram
 * [UML Diagram](#)
