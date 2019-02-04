@@ -48,6 +48,7 @@ class Form extends React.Component {
   render() {
     return (
       <>
+        <main>
         <FormScaff handleSubmit={this.handleSubmit} />
           <Map location={this.state.location} className={this.state.mapClassName}/>
           <div className={this.state.divClassName}>
@@ -72,6 +73,7 @@ class Form extends React.Component {
               <Trails />
             </section>
           </div>
+        </main>
       </>
     );
   }
