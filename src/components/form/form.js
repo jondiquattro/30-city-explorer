@@ -51,16 +51,26 @@ class Form extends React.Component {
         <FormScaff handleSubmit={this.handleSubmit} />
           <Map location={this.state.location} className={this.state.mapClassName}/>
           <div className={this.state.divClassName}>
-            <WeatherHeader />
-            <Weather weather={this.state.weather} />
-            <YelpHeader />
-            <Yelp />
-            <MeetupHeader />
-            <Meetup />
-            <MoviesHeader />
-            <Movies />
-            <TrailsHeader />
-            <Trails />
+            <section>
+              <WeatherHeader />
+              <Weather weather={this.state.weather} />
+            </section>
+            <section>
+              <YelpHeader />
+              <Yelp />
+            </section>
+            <section>
+              <MeetupHeader />
+              <Meetup />
+            </section>
+            <section>
+              <MoviesHeader />
+              <Movies />
+            </section>
+            <section>  
+              <TrailsHeader />
+              <Trails />
+            </section>
           </div>
       </>
     );

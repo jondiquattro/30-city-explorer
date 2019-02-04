@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./components/header/header.js";
 import Form from "./components/form/form.js";
-// import './styles.scss';
+import './design/App.css';
 
 class App extends React.Component {
   constructor(props) {
