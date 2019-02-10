@@ -4,7 +4,13 @@ import superagent from 'superagent';
 const Movies = props => {
   return (
     <ul>
-      <li>Hello Movies!</li>
+ 
+      {props.movies.map((movie, idx) => (
+        <li key={idx}>The movies playing are {movie.title} is: {movie.title}</li>
+        
+      ))}
+   
+
     </ul>
   );
 }
