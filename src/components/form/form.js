@@ -32,43 +32,43 @@ class Form extends React.Component {
 
     let data = await superagent.get(`https://city-explorer-backend.herokuapp.com/location?data=${e.target.inputsearch.value}`)
     this.setState({ location: data.body });
-    
-    console.log(`Query: ${this.state.location.formatted_query}, Lat: ${this.state.location.latitude}, Long: ${this.state.location.longitude}`);
-    
-    let weather = await superagent.get("https://city-explorer-backend.herokuapp.com/weather")
-      .query({data: this.state.location})
 
-    this.setState({weather: weather.body});
+    console.log(`Query: ${this.state.location.formatted_query}, Lat: ${this.state.location.latitude}, Long: ${this.state.location.longitude}`);
+
+    let weather = await superagent.get("https://city-explorer-backend.herokuapp.com/weather")
+      .query({ data: this.state.location })
+
+    this.setState({ weather: weather.body });
 
     //yelp
     let yelp = await superagent.get(`https://city-explorer-backend.herokuapp.com/yelp`)
-    .query({data: this.state.location})
+      .query({ data: this.state.location })
 
-    this.setState({yelp: yelp.body})
+    this.setState({ yelp: yelp.body })
 
     //meetup
     let meetups = await superagent.get(`https://city-explorer-backend.herokuapp.com/meetups`)
-    .query({data: this.state.location})
+      .query({ data: this.state.location })
 
-    this.setState({meetups: meetups.body})
-
-
-     //movie
-     let movies = await superagent.get(`https://city-explorer-backend.herokuapp.com/movies`)
-     .query({data: this.state.location})
- 
-     this.setState({movies: movies.body})
-
-         //trails
-         let trails = await superagent.get(`https://city-explorer-backend.herokuapp.com/trails`)
-         .query({data: this.state.location})
-     
-         this.setState({trails: trails.body})
+    this.setState({ meetups: meetups.body })
 
 
+    //movie
+    let movies = await superagent.get(`https://city-explorer-backend.herokuapp.com/movies`)
+      .query({ data: this.state.location })
+
+    this.setState({ movies: movies.body })
+
+    //trails
+    let trails = await superagent.get(`https://city-explorer-backend.herokuapp.com/trails`)
+      .query({ data: this.state.location })
+
+    this.setState({ trails: trails.body })
 
 
-    this.setState({mapClassName: ''});
+
+
+    this.setState({ mapClassName: '' });
   }
 
   handleChange = (event) => {
@@ -82,8 +82,8 @@ class Form extends React.Component {
     return (
       <>
         <main>
-        <FormScaff handleSubmit={this.handleSubmit} />
-          <Map location={this.state.location} className={this.state.mapClassName}/>
+          <FormScaff handleSubmit={this.handleSubmit} />
+          <Map location={this.state.location} className={this.state.mapClassName} />
           <div className={this.state.divClassName}>
             <section>
               <WeatherHeader />
@@ -95,15 +95,15 @@ class Form extends React.Component {
             </section>
             <section>
               <MeetupHeader />
-              <Meetup meetups={this.state.meetups}/>
+              <Meetup meetups={this.state.meetups} />
             </section>
             <section>
               <MoviesHeader />
-              <Movies movies={this.state.movies}/>
+              <Movies movies={this.state.movies} />
             </section>
-            <section>  
+            <section>
               <TrailsHeader />
-              <Trails trails={this.state.trails}/>
+              <Trails trails={this.state.trails} />
             </section>
           </div>
         </main>
