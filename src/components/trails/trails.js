@@ -4,7 +4,9 @@ import superagent from 'superagent';
 const Trails = props => {
   return (
     <ul>
-      <li>Hello Trails!</li>
+      {props.trails.map((path, idx) => (
+        <li key={idx}>The place for {path.name} is: {path.name}</li>
+      ))}
     </ul>
   );
 }

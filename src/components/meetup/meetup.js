@@ -4,7 +4,9 @@ import superagent from 'superagent';
 const Meetup = props => {
   return (
     <ul>
-      <li>Hello Meetup!</li>
+      {props.meetups.map((meeting, idx) => (
+        <li key={idx}>The meeting for {meeting.name} is: {meeting.name}</li>
+      ))}
     </ul>
   );
 }

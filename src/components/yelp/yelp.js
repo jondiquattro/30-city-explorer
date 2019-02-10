@@ -1,13 +1,19 @@
 import React from "react";
-import superagent from 'superagent';
 
 const Yelp = props => {
   return (
     <ul>
-      <li>Hello Yelp!</li>
+ 
+      {props.yelp.map((place, idx) => (
+        <li key={idx}>The place for {place.name} is: {place.name}</li>
+        
+      ))}
+   
+
     </ul>
   );
 }
 
 
 export default Yelp;
+

@@ -20,6 +20,10 @@ class Form extends React.Component {
       divClassName: 'column-container hide',
       location: {},
       weather: [],
+      yelp: [],
+      meetups: [],
+      movies: [],
+      trails: [],
     };
   }
 
@@ -33,7 +37,36 @@ class Form extends React.Component {
     
     let weather = await superagent.get("https://city-explorer-backend.herokuapp.com/weather")
       .query({data: this.state.location})
+
     this.setState({weather: weather.body});
+
+    //yelp
+    let yelp = await superagent.get(`https://city-explorer-backend.herokuapp.com/yelp`)
+    .query({data: this.state.location})
+
+    this.setState({yelp: yelp.body})
+
+    //meetup
+    let meetups = await superagent.get(`https://city-explorer-backend.herokuapp.com/meetups`)
+    .query({data: this.state.location})
+
+    this.setState({meetups: meetups.body})
+
+
+     //movie
+     let movies = await superagent.get(`https://city-explorer-backend.herokuapp.com/movies`)
+     .query({data: this.state.location})
+ 
+     this.setState({movies: movies.body})
+
+         //trails
+         let trails = await superagent.get(`https://city-explorer-backend.herokuapp.com/trails`)
+         .query({data: this.state.location})
+     
+         this.setState({trails: trails.body})
+
+
+
 
     this.setState({mapClassName: ''});
   }
@@ -58,19 +91,19 @@ class Form extends React.Component {
             </section>
             <section>
               <YelpHeader />
-              <Yelp />
+              <Yelp yelp={this.state.yelp} />
             </section>
             <section>
               <MeetupHeader />
-              <Meetup />
+              <Meetup meetups={this.state.meetups}/>
             </section>
             <section>
               <MoviesHeader />
-              <Movies />
+              <Movies movies={this.state.movies}/>
             </section>
             <section>  
               <TrailsHeader />
-              <Trails />
+              <Trails trails={this.state.trails}/>
             </section>
           </div>
         </main>
